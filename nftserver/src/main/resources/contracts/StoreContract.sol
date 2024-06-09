@@ -3,9 +3,11 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract StoreContract {
   int32 data;
-  
 
-  function helloFunction(int32 data) public view returns(uint) {
+  event Transaction(address owner);
+
+  function helloFunction(int32 data,address owner) public returns(uint) {
     data = data;
+    emit Transaction(owner);
   }
 }
